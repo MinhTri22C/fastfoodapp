@@ -29,7 +29,7 @@ fun AccountScreen(navController: NavHostController) {
                     .fillMaxSize()
                     .padding(start = 0.dp), // Adjust padding here
                     verticalAlignment = Alignment.CenterVertically) {
-                    IconButton(onClick = { navController.popBackStack() }) {
+                    IconButton(onClick = { navController.navigate("Home") }) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Back"
@@ -98,6 +98,28 @@ fun AccountScreen(navController: NavHostController) {
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(
                     text = "Delivery Address",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp)
+                    .clickable { navController.navigate("OrderScreen") } // Điều hướng
+                    .background(Color.White, shape = RoundedCornerShape(8.dp))
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.giohanguser),
+                    contentDescription = "Delivery Address",
+                    modifier = Modifier.size(32.dp)
+                )
+                Spacer(modifier = Modifier.width(16.dp))
+                Text(
+                    text = "My Order",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Black

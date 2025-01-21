@@ -19,8 +19,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.fastfood_app.Account.AccountScreen
 import com.example.fastfood_app.Account.AddnewAddress
 import com.example.fastfood_app.Account.AddressScreen
+import com.example.fastfood_app.Account.Danhan
+import com.example.fastfood_app.Account.OrderScreen
 import com.example.fastfood_app.Account.PasswordSettingScreen
 import com.example.fastfood_app.Account.ProfileScreen
+import com.example.fastfood_app.Account.dahuy
 import com.example.fastfood_app.Admin.Customerorder
 import com.example.fastfood_app.Admin.HomeAdminScreen
 import com.example.fastfood_app.FavoritesScreen.FavoritesScreen
@@ -74,6 +77,10 @@ fun NavigationComponent(navController: NavHostController) {
             val donHangId = backStackEntry.arguments?.getString("donHangId")?.toIntOrNull() ?: 0
             OrderDetail(navController, donHangId)
         }
+        composable("OrderScreen"){OrderScreen(navController)}
+        composable("Danhan"){Danhan(navController)}
+        composable("OrderScreen"){OrderScreen(navController)}
+        composable("dahuy"){ dahuy(navController) }
     }
 }
 
