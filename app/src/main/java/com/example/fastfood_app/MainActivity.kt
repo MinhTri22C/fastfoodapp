@@ -20,6 +20,7 @@ import com.example.fastfood_app.Account.AccountScreen
 import com.example.fastfood_app.Account.AddnewAddress
 import com.example.fastfood_app.Account.AddressScreen
 import com.example.fastfood_app.Account.Danhan
+import com.example.fastfood_app.Account.OrderDetailScreen
 import com.example.fastfood_app.Account.OrderScreen
 import com.example.fastfood_app.Account.PasswordSettingScreen
 import com.example.fastfood_app.Account.ProfileScreen
@@ -81,6 +82,7 @@ fun NavigationComponent(navController: NavHostController) {
         composable("Danhan"){Danhan(navController)}
         composable("OrderScreen"){OrderScreen(navController)}
         composable("dahuy"){ dahuy(navController) }
+        composable("OrderDetailScreen"){OrderDetailScreen(navController)}
     }
 }
 

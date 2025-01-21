@@ -154,14 +154,14 @@ fun OrderScreen(navController: NavHostController) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(orders) { order ->
-                OrderItem(order)
+                OrderItem(order,navController)
             }
         }
     }
 }
 
 @Composable
-fun OrderItem(order: Order) {
+fun OrderItem(order: Order,navController: NavHostController) {
     Row(
         modifier = Modifier
             .fillMaxWidth() // Để hàng chiếm toàn bộ chiều ngang
@@ -222,9 +222,11 @@ fun OrderItem(order: Order) {
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFFFF6E40)
             )
-            Spacer(modifier = Modifier.height(8.dp))
+
+            Spacer(modifier = Modifier.height(4.dp))
             Button(
-                onClick = {},
+                onClick = {navController.navigate("OrderDetailScreen")
+                },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = Color(0xFFFF6E40),
                     contentColor = Color.White
@@ -232,7 +234,7 @@ fun OrderItem(order: Order) {
                 shape = RoundedCornerShape(20.dp),
                 modifier = Modifier.height(32.dp)
             ) {
-                Text("Cancel Order")
+                Text("xem chi tiết")
             }
         }
     }

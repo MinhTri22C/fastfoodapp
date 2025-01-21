@@ -42,7 +42,8 @@ fun Danhan(navController: NavHostController) {
     val danhan = listOf(
         danhan("Mỳ", "29 Nov, 01:20 pm", "2 items", "20.000đ","Đã Nhận", R.drawable.myy),
         danhan("Lemonade", "30 Nov, 02:30 pm", "1 item", "15.000đ","Đã Nhận", R.drawable.nuoc),
-        danhan("Pizza", "01 Dec, 12:00 pm", "3 items", "25.000đ","Đã Nhận", R.drawable.pizza)
+        danhan("Pizza", "01 Dec, 12:00 pm", "3 items", "25.000đ","Đã Nhận", R.drawable.pizza),
+        danhan("Humberger", "01 Dec, 2:00 pm", "1 items", "125.000đ","Đã Nhận", R.drawable.hum)
     )
 
     Column(
