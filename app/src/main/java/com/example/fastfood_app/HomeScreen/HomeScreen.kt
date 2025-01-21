@@ -348,7 +348,7 @@ fun HomeScreen(navController: NavHostController,viewModel: ProductViewModel= vie
                         .padding(top = 10.dp)
                 ) {
                     items(productList.size) { index ->
-                        ProductItem(product = productList[index])
+                        ProductItem(product = productList[index],navController)
                     }
                 }
             }
@@ -404,7 +404,7 @@ fun HomeScreen(navController: NavHostController,viewModel: ProductViewModel= vie
                         .padding(top = 10.dp)
                 ) {
                     items(productListCagHum.size) { index ->
-                        ProductItem(product = productListCagHum[index])
+                        ProductItem(product = productListCagHum[index],navController)
                         }
                     }
                 }
@@ -433,7 +433,7 @@ fun HomeScreen(navController: NavHostController,viewModel: ProductViewModel= vie
                 ) {
                     items(productList_My.size) { index ->
 
-                                ProductItem(product = productList_My[index])
+                                ProductItem(product = productList_My[index],navController)
                     }
                 }
             }//
@@ -459,7 +459,7 @@ fun HomeScreen(navController: NavHostController,viewModel: ProductViewModel= vie
                         .padding(top = 10.dp)
                 ) {
                     items(productcag_Pizza.size) { index ->
-                      ProductItem(product = productcag_Pizza[index])
+                      ProductItem(product = productcag_Pizza[index],navController)
                     }
                 }
             }//
@@ -486,7 +486,7 @@ fun HomeScreen(navController: NavHostController,viewModel: ProductViewModel= vie
                         .padding(top = 10.dp)
                 ) {
                     items(productcag_Ga.size) { index ->
-ProductItem(product = productcag_Ga[index]  )
+ProductItem(product = productcag_Ga[index] ,navController )
                     }
                 }
             }//
@@ -510,7 +510,7 @@ ProductItem(product = productcag_Ga[index]  )
                         .padding(top = 10.dp)
                 ) {
                     items(productcag_Nuoc.size) { index ->
-               ProductItem(product = productcag_Nuoc[index])
+               ProductItem(product = productcag_Nuoc[index],navController)
                     }
                 }
             }//
@@ -521,7 +521,7 @@ ProductItem(product = productcag_Ga[index]  )
 
 
 @Composable
-fun ProductItem(product: Product) {
+fun ProductItem(product: Product,navController: NavHostController) {
     Card(
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
@@ -529,7 +529,7 @@ fun ProductItem(product: Product) {
             .height(170.dp)
             .padding(horizontal = 8.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(8.dp)
+        elevation = CardDefaults.cardElevation(8.dp), onClick = {navController.navigate("ProductDetail")}
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),
@@ -543,8 +543,8 @@ fun ProductItem(product: Product) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier.padding(5.dp)
                 ) {
-                    AsyncImage(
-                        model = product.imageUrl,  // URL của ảnh
+                    Image(
+                        painter = painterResource(id = R.drawable.hum), // Thay your_image bằng tên hình trong thư mục drawable
                         contentDescription = "Hình ảnh món ăn",
                         modifier = Modifier.size(80.dp),
                         contentScale = ContentScale.Crop
